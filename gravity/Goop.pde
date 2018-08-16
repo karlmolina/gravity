@@ -1,6 +1,8 @@
 class Goop {
   PVector p, v = new PVector(), a = new PVector();
   
+  Goop() {}
+  
   Goop(float x, float y) {
     p = new PVector(x, y);
   }
