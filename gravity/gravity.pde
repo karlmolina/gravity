@@ -11,15 +11,18 @@ void setup() {
   g = new Goop(center.x + 100, center.y);
   g.v = new PVector(-4, 10);
   goops = new ArrayList<Goop>();
+  goops.add(g);
 }
 
 void draw() {
   background(0);
   ellipse(center.x, center.y, 20, 20);
 
-  g.a = getAcc(center, g.p);
-  g.move();
-  g.see();
+  for (Goop g : goops) {
+    g.a = getAcc(center, g.p);
+    g.move();
+    g.see();
+  }
 }
 
 PVector getAcc(PVector center, PVector position) {
